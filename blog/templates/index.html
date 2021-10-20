@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="static/css/index.css" rel="stylesheet">
+</head>
+<body>
+    {% include "nav.html" %}
+    <h1 class="text-haut">Bienvenue sur mon site</h1>
+    <!-- Section principale -->
+    <section class="main">
+        <div class="cards">
+        {% for article in Listes_articles %}
+            <div class="card" >
+                <img class="card_image" src="{{article.image.url}}" alt="Card image cap">
+                <div class="card_body">
+                    <h4 class="card_title">{{article.title}}</h4>
+                    <p class="card_text">{{article.desc}}</p>
+                    <p class="card_text">Creé le: {{article.created_at}}</p>
+                </div>
+                <div class="button">
+                    <a href="#" class="btn_primary">Button</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+    <!--  Fin section principale -->
+{% include "footer.html" %}
+
+
+
+
+
+
+</body>
+</html>
